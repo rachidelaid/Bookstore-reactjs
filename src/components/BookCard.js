@@ -8,9 +8,9 @@ const BookCard = ({ title, category }) => (
       <h3 className="title">{title}</h3>
       <p className="author">suzane collns</p>
       <div className="actions">
-        <p>Comments</p>
-        <p>Remove</p>
-        <p>Edit</p>
+        <button type="button">Comments</button>
+        <button type="button">Remove</button>
+        <button type="button">Edit</button>
       </div>
     </div>
     <div className="progress">

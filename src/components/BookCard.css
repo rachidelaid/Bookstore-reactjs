@@ -27,6 +27,17 @@ span {
   cursor: pointer;
 }
 
+.actions button {
+  background-color: transparent;
+  color: black;
+}
+
+.actions button:hover,
+.actions button:active {
+  text-decoration: underline;
+  transform: unset;
+}
+
 .progress {
   display: flex;
   justify-content: center;

@@ -1,22 +1,10 @@
 import './Books.css';
 
 import BookCard from './BookCard';
+import Form from './Form';
 
 const Books = () => {
-  const data = {
-    item1: [
-      {
-        title: "The Handmaid's Tale",
-        category: 'Fiction',
-      },
-    ],
-    item2: [
-      {
-        title: 'Great Expectations',
-        category: 'Classics',
-      },
-    ],
-  };
+  const data = {};
 
   return (
     <section className="books">
@@ -27,6 +15,7 @@ const Books = () => {
           category={data[key][0].category}
         />
       ))}
+      <Form />
     </section>
   );
 };

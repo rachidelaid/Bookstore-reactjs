@@ -1,0 +1,68 @@
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+span {
+  color: gray;
+}
+
+.details span {
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.details p {
+  font-size: 0.9rem;
+}
+
+.actions {
+  margin-top: 0.4rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.actions p {
+  cursor: pointer;
+}
+
+.actions button {
+  background-color: transparent;
+  color: black;
+}
+
+.actions button:hover,
+.actions button:active {
+  text-decoration: underline;
+  transform: unset;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.svg {
+  transform: scale(0.6);
+}
+
+.svg circle {
+  fill: transparent;
+  stroke: lightgray;
+  stroke-width: 0.7rem;
+  stroke-dashoffset: 4.125rem;
+}
+
+.bar {
+  stroke: black !important;
+}
+
+.chapter {
+  padding-left: 1.5rem;
+  border-left: 2px lightgray solid;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

@@ -1,18 +1,19 @@
 import './Books.css';
-
+import { useSelector } from 'react-redux';
 import BookCard from './BookCard';
 import Form from './Form';
 
 const Books = () => {
-  const data = {};
+  const data = useSelector(({ booksReducer }) => booksReducer);
 
   return (
     <section className="books">
-      {Object.keys(data).map((key) => (
+      {data.map((book) => (
         <BookCard
-          key={key}
-          title={data[key][0].title}
-          category={data[key][0].category}
+          key={book.id}
+          id={book.id}
+          title={book.title}
+          category={book.category}
         />
       ))}
       <Form />

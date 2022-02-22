@@ -1,17 +1,21 @@
 import './Form.css';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
 const Form = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
+
+  const length = useSelector(({ booksReducer }) => booksReducer.length);
+
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(
       addBook({
+        id: `item${length + 1}`,
         title,
         category,
       }),

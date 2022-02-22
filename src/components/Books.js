@@ -11,6 +11,7 @@ const Books = () => {
       {Object.keys(data).map((key) => (
         <BookCard
           key={key}
+          id={key}
           title={data[key][0].title}
           category={data[key][0].category}
         />

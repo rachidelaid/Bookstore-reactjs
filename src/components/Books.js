@@ -10,8 +10,8 @@ const Books = () => {
     <section className="books">
       {data.map((book) => (
         <BookCard
-          key={book.id}
-          id={book.id}
+          key={book.item_id}
+          id={book.item_id}
           title={book.title}
           category={book.category}
         />

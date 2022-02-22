@@ -11,6 +11,22 @@ export const removeBook = (payload) => ({
   payload,
 });
 
+export const fetchData = () => (dispatch) => fetch(
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/VFbcOva4gydD84rw77of/books',
+)
+  .then((response) => response.json())
+  .then((data) => {
+    Object.keys(data).forEach((book) => {
+      dispatch({
+        type: ADD_BOOK,
+        payload: {
+          item_id: book,
+          ...data[book][0],
+        },
+      });
+    });
+  });
+
 const initialState = [];
 
 const reducer = (state = initialState, action) => {
@@ -18,7 +34,7 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((b) => b.id !== action.payload.id);
+      return state.filter((b) => b.item_id !== action.payload.id);
     default:
       return state;
   }

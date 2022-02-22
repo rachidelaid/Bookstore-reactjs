@@ -17,4 +17,5 @@ form {
 input {
   width: 100%;
   font-size: 1.1rem;
+  padding: 0 0.5rem;
 }

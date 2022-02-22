@@ -7,19 +7,36 @@ const Form = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
 
-  const length = useSelector(({ booksReducer }) => booksReducer.length);
+  const data = useSelector(({ booksReducer }) => booksReducer);
 
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(
-      addBook({
-        id: `item${length + 1}`,
-        title,
-        category,
-      }),
+
+    const book = {
+      item_id: `book_${
+        data
+          .map((b) => +b.item_id.split('_')[1])
+          .sort()
+          .reverse()[0] + 1 || 1
+      }`,
+      title: title.trim(),
+      category,
+    };
+
+    fetch(
+      'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/VFbcOva4gydD84rw77of/books',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(book),
+      },
     );
+
+    dispatch(addBook(book));
 
     setTitle('');
     setCategory('');
@@ -37,7 +54,7 @@ const Form = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="" disabled selected>
+          <option value="" disabled>
             Category
           </option>
           <option value="action">Action</option>

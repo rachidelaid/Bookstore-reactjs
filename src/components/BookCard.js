@@ -7,6 +7,13 @@ const BookCard = ({ id, title, category }) => {
   const dispatch = useDispatch();
 
   const handleRemove = () => {
+    fetch(
+      `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/VFbcOva4gydD84rw77of/books/${id}`,
+      {
+        method: 'DELETE',
+      },
+    );
+
     dispatch(removeBook({ id }));
   };
 

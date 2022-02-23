@@ -15,15 +15,20 @@
 :root {
   --roboto-font: 'Roboto Slab', serif;
   --montserrat-font: 'Montserrat', sans-serif;
+  --white-color: #fff;
   --main-color: #0290ff;
   --lightgray-color: #f5f6fa;
   --gray-color: #e8e8e8;
   --darkgray-color: #888;
+  --darkblue-color: #0e1e46;
+  --lightblue-color: #1c212e;
+  --text-color: #000;
 }
 
 body {
   font-family: var(--roboto-font);
   background-color: var(--lightgray-color);
+  color: var(--text-color);
 }
 
 button {

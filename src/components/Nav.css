@@ -4,7 +4,7 @@
   align-items: center;
   padding: 1rem 2rem;
   gap: 1rem;
-  background-color: #fff;
+  background-color: var(--white-color);
   border-bottom: 1px solid var(--gray-color);
 }
 
@@ -23,15 +23,24 @@
 }
 
 .links .active {
-  color: #000;
+  color: var(--text-color);
 }
 
 .navbar svg {
-  width: 24px;
+  width: 1.9rem;
   color: var(--main-color);
   padding: 0.2rem;
   border-radius: 50%;
   border: 1px solid var(--gray-color);
   margin-left: auto;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar svg:hover {
+  transform: scale(1.1);
+}
+
+.navbar svg:active {
+  transform: scale(0.9);
 }

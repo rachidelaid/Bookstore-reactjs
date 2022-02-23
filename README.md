@@ -6,6 +6,10 @@ This is a website to Display a list of books using an API, you can also add new 
 
 ![screenshot](./screenshot.gif)
 
+## Live Demo
+
+you can try it out live [here](https://reactjs-book-store-cms.netlify.app/)
+
 ## Built With
 
 - HTML

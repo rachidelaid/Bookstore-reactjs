@@ -82,7 +82,7 @@
 
 .card .chapter {
   padding: 0 4rem 0 1.5rem;
-  border-left: 2px lightgray solid;
+  border-left: 2px var(--gray-color) solid;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

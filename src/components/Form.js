@@ -53,15 +53,22 @@ const Form = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          required
+        >
           <option value="" disabled>
             Category
           </option>
-          <option value="action">Action</option>
-          <option value="comedy">Comedy</option>
-          <option value="horror">Horror</option>
-          <option value="fiction">Fiction</option>
-          <option value="classics">Classics</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Dystopian">Dystopian</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Romance">Romance</option>
+          <option value="Detective & Mystery">Detective & Mystery</option>
+          <option value="Horror">Horror</option>
+          <option value="Thriller">Thriller</option>
         </select>
         <button type="submit">ADD BOOK</button>
       </form>

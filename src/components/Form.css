@@ -1,21 +1,36 @@
 .form {
-  border-top: 2px lightgray solid;
-  margin-top: 2rem;
-  padding: 2rem;
+  border-top: 2px var(--gray-color) solid;
+  margin-top: 1rem;
+  padding: 1rem 0;
 }
 
-h3 {
+.form h3 {
   margin-bottom: 1rem;
+  color: var(--darkgray-color);
 }
 
-form {
+.form form {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
-input {
-  width: 100%;
+.form input {
+  width: 70%;
   font-size: 1.1rem;
   padding: 0 0.5rem;
+  border: 1px solid var(--gray-color);
+  background-color: var(--white-color);
+  border-radius: 3px;
+}
+
+.form select {
+  width: calc(30% - 150px);
+  background-color: var(--white-color);
+  border: 1px solid var(--gray-color);
+  border-radius: 3px;
+}
+
+.form button {
+  width: 150px;
 }

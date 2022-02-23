@@ -1,4 +1,5 @@
 .categories {
+  padding: 4rem;
   text-align: center;
-  color: gray;
+  color: var(--darkgray-color);
 }

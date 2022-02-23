@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
 *,
 *::after,
 *::before {
@@ -9,18 +12,36 @@
   list-style: none;
 }
 
+:root {
+  --roboto-font: 'Roboto Slab', serif;
+  --montserrat-font: 'Montserrat', sans-serif;
+  --white-color: #fff;
+  --main-color: #0290ff;
+  --lightgray-color: #f5f6fa;
+  --gray-color: #e8e8e8;
+  --darkgray-color: #888;
+  --darkblue-color: #0e1e46;
+  --lightblue-color: #1c212e;
+  --text-color: #000;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--roboto-font);
+  background-color: var(--lightgray-color);
+  color: var(--text-color);
 }
 
 button {
+  font-family: var(--roboto-font);
   padding: 0.5rem 1rem;
-  background-color: black;
+  background-color: var(--main-color);
   color: #fff;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  font-weight: bold;
+  border-radius: 3px;
 }
 
 button:hover {

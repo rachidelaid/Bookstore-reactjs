@@ -2,23 +2,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 1rem;
+  border: 1px solid var(--gray-color);
+  font-size: 0.875rem;
 }
 
-span {
-  color: gray;
+.card span {
+  color: var(--darkgray-color);
 }
 
-.details span {
+.details .category {
   display: block;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
 }
 
-.details p {
-  font-size: 0.9rem;
+.details .title {
+  font-size: 1.375rem;
+}
+
+.details .author {
+  color: var(--main-color);
 }
 
 .actions {
-  margin-top: 0.4rem;
+  margin-top: 0.6rem;
   display: flex;
   gap: 1rem;
 }
@@ -29,7 +38,9 @@ span {
 
 .actions button {
   background-color: transparent;
-  color: black;
+  color: var(--main-color);
+  padding: 0;
+  font-weight: normal;
 }
 
 .actions button:hover,
@@ -38,31 +49,50 @@ span {
   transform: unset;
 }
 
-.progress {
+.card .progress {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.svg {
-  transform: scale(0.6);
+.card .svg {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-right: 0.4rem;
 }
 
-.svg circle {
+.card .svg circle {
   fill: transparent;
-  stroke: lightgray;
-  stroke-width: 0.7rem;
+  stroke: var(--gray-color);
+  stroke-width: 0.5rem;
   stroke-dashoffset: 4.125rem;
 }
 
-.bar {
-  stroke: black !important;
+.card .bar {
+  stroke: var(--main-color) !important;
 }
 
-.chapter {
-  padding-left: 1.5rem;
+.card .count {
+  font-family: var(--montserrat-font);
+}
+
+.card .count p {
+  font-size: 2rem;
+}
+
+.card .chapter {
+  padding: 0 4rem 0 1.5rem;
   border-left: 2px lightgray solid;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.card .chapter p {
+  margin-bottom: 0.5rem;
+}
+
+.card .chapter button {
+  color: var(--gray-color);
+  font-weight: normal;
 }

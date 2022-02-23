@@ -1,11 +1,37 @@
 .navbar {
+  font-family: var(--montserrat-font);
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  background-color: #fff;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.navbar h2 {
+  color: var(--main-color);
+  font-size: 1.875rem;
+  font-weight: bold;
 }
 
 .links {
   display: flex;
   gap: 1rem;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: var(--darkgray-color);
+}
+
+.links .active {
+  color: #000;
+}
+
+.navbar svg {
+  width: 24px;
+  color: var(--main-color);
+  padding: 0.2rem;
+  border-radius: 50%;
+  border: 1px solid var(--gray-color);
+  margin-left: auto;
+  cursor: pointer;
 }

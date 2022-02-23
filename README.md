@@ -4,6 +4,8 @@
 
 This is a website to Display a list of books using an API, you can also add new book and removing it.
 
+![screenshot](./screenshot.gif)
+
 ## Built With
 
 - HTML

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -25,8 +26,31 @@ const BookCard = ({ id, title, category }) => {
     dispatch(removeBook({ id }));
   };
 
+  const dropIn = {
+    hidden: {
+      x: '150vh',
+    },
+    visible: {
+      x: '0',
+      transition: {
+        duration: 0.2,
+        damping: 25,
+        stiffness: 500,
+      },
+    },
+    exit: {
+      x: '-150vh',
+    },
+  };
+
   return (
-    <div className="card">
+    <motion.div
+      variants={dropIn}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="card"
+    >
       <div className="details">
         <span className="category">{category}</span>
         <h3 className="title">{title.split(' , ')[0]}</h3>
@@ -64,7 +88,7 @@ const BookCard = ({ id, title, category }) => {
           UPDATE PROGRESS
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

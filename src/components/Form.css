@@ -35,8 +35,7 @@
 }
 
 .form button {
-  width: 320px;
-  max-width: 100%;
+  width: min(100%, 350px);
 }
 
 @media screen and (max-width: 740px) {

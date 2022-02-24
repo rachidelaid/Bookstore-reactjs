@@ -16,7 +16,7 @@
 }
 
 .form input {
-  width: 70%;
+  width: 100%;
   font-size: 1.1rem;
   padding: 0 0.5rem;
   border: 1px solid var(--gray-color);
@@ -25,12 +25,13 @@
 }
 
 .form select {
-  width: calc(30% - 150px);
+  /* width: calc(30% - 150px); */
+  padding: 0 0.5rem;
   background-color: var(--white-color);
   border: 1px solid var(--gray-color);
   border-radius: 3px;
 }
 
 .form button {
-  width: 150px;
+  width: 320px;
 }

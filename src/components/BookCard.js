@@ -1,10 +1,18 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 import './BookCard.css';
 
 const BookCard = ({ id, title, category }) => {
   const dispatch = useDispatch();
+  const [percentage, setPercentage] = useState(Math.floor(Math.random() * 90));
+
+  const increasePerc = () => {
+    if (percentage < 100) {
+      setPercentage(percentage + 10 <= 100 ? percentage + 10 : 100);
+    }
+  };
 
   const handleRemove = () => {
     fetch(
@@ -21,8 +29,8 @@ const BookCard = ({ id, title, category }) => {
     <div className="card">
       <div className="details">
         <span className="category">{category}</span>
-        <h3 className="title">{title}</h3>
-        <p className="author">suzane collns</p>
+        <h3 className="title">{title.split(' , ')[0]}</h3>
+        <p className="author">{title.split(' , ')[1]}</p>
         <div className="actions">
           <button type="button">Comments</button>
           <button type="button" onClick={handleRemove}>
@@ -39,18 +47,22 @@ const BookCard = ({ id, title, category }) => {
             cx="50"
             cy="50"
             r="42"
-            strokeDasharray="134 130"
+            strokeDasharray={`${percentage * 2.64} ${
+              (100 - percentage) * 2.64
+            }`}
           />
         </svg>
         <div className="count">
-          <p>50%</p>
+          <p>{`${percentage}%`}</p>
           <span>Completed</span>
         </div>
       </div>
       <div className="chapter">
         <span>CURRENT CHAPTER</span>
         <p>Chapter 7</p>
-        <button type="button">UPDATE PROGRESS</button>
+        <button type="button" onClick={increasePerc}>
+          UPDATE PROGRESS
+        </button>
       </div>
     </div>
   );

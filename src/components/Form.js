@@ -6,6 +6,7 @@ import { addBook } from '../redux/books/books';
 const Form = () => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
+  const [author, setAuthor] = useState('');
 
   const data = useSelector(({ booksReducer }) => booksReducer);
 
@@ -21,7 +22,7 @@ const Form = () => {
           .sort()
           .reverse()[0] + 1 || 1
       }`,
-      title: title.trim(),
+      title: `${title.trim()} , ${author.trim()}`,
       category,
     };
 
@@ -40,6 +41,7 @@ const Form = () => {
 
     setTitle('');
     setCategory('');
+    setAuthor('');
   };
 
   return (
@@ -52,6 +54,13 @@ const Form = () => {
           required
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Author"
+          required
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
         />
         <select
           value={category}

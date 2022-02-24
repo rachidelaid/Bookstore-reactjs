@@ -44,3 +44,14 @@
 .navbar svg:active {
   transform: scale(0.9);
 }
+
+@media screen and (max-width: 560px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .navbar a {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+}

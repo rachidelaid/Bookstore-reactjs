@@ -97,3 +97,25 @@
   color: var(--gray-color);
   font-weight: normal;
 }
+
+@media screen and (max-width: 740px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .card .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card .chapter {
+    padding: 1rem 0 0 0;
+    border: none;
+    align-items: center;
+    border-top: 2px var(--gray-color) solid;
+  }
+}
